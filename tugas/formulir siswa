@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulir Pendaftaran Siswa</title>
+</head>
+<body>
+    <h2>Formulir Pendaftaran Siswa</h2>
+    <form action="#" method="post">
+        <table>
+            <tr>
+                <td><label for="nama">Nama Lengkap:</label></td>
+                <td><input type="text" id="nama" name="nama"></td>
+            </tr>
+            <tr>
+                <td><label for="password">Password:</label></td>
+                <td><input type="password" id="password" name="password"></td>
+            </tr>
+            <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" id="email" name="email"></td>
+            </tr>
+            <tr>
+                <td><label for="alamat">Alamat:</label></td>
+                <td><textarea id="alamat" name="alamat"></textarea></td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin:</td>
+                <td>
+                    <input type="radio" id="laki" name="jenis_kelamin" value="Laki-laki">
+                    <label for="laki">Laki-laki</label>
+                    <input type="radio" id="perempuan" name="jenis_kelamin" value="Perempuan">
+                    <label for="perempuan">Perempuan</label>
+			
+                </td>
+            </tr>
+            <tr>
+                <td><label for="kelas">Pilih Kelas:</label></td>
+                <td>
+                    <select id="kelas" name="kelas">
+                        <option value="X">X</option>
+                        <option value="XI">XI</option>
+                        <option value="XII">XII</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Hobi:</td>
+                <td>
+                    <input type="checkbox" id="memancing" name="hobi" value="memancing">
+                    <label for="memancing">memancing</label>
+                    <input type="checkbox" id="olahraga" name="hobi" value="Olahraga">
+                    <label for="olahraga">Olahraga</label>
+                    <input type="checkbox" id="musik" name="hobi" value="Musik">
+                    <label for="musik">Musik</label>
+                </td>
+            </tr>
+            <tr>
+                <td><label for="tanggal">Tanggal Lahir:</label></td>
+                <td><input type="date" id="tanggal" name="tanggal"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
+
