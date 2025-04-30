@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+    <html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <title>Formulir Pendaftaran dengan gambar dan canvas</title>
+    </head>
+    <body>
+        <h2>Formulir Pendaftaran</h2>
+        
+        <img src=walid.jpg><br></br>
+        <form action="#" method="post">
+            <label>Nama:</label>
+            <input type="text" name="nama"><br></br>
+        
+            <label>Email:</label>
+            <input type="email" name="email"><br></br>
+            
+            <label>Tanggal Lahir:</label>
+            <input type="date"  name="tanggal_lahir"><br></br>
+            
+            <label>Tanda Tangan:</label>
+            <canvas id="signature" widht="200" height="100" style="border:1px
+             solid black;"></canvas><br></br>
+             
+             <button type="button" onclick="clearCanvas()">Hapus Tanda Tangan</button><br></br>
+             
+             <button type="sumbit">sumbit</button>
+             <button type="reset">reset</reset>
+             
+        </form>
+        
+        
+        <script>
+                const canvas= document.getElementById('signature');
+                const ctx = canvas.getContext('2d');
+                let isDrawing = false;
+    
+            canvas.addEventListener('mousedown', (e) => {
+                isDrawing = true;
+                ctx.beginPath();
+                ctx.moveTo(e.offsetX, e.offsetY);
+            });
+    
+            canvas.addEventListener('mousemove', (e) => {
+                if (isDrawing) {
+                    ctx.lineTo(e.offsetX, e.offsetY);
+                    ctx.stroke();
+                }
+            });
+    
+            canvas.addEventListener('mouseup', () => isDrawing = false);
+            canvas.addEventListener('mouseleave', () => isDrawing = false);
+    
+            function clearCanvas() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+            }
+        </script>
+    </body>
+    </html>
+    </body>
