@@ -7,30 +7,29 @@
 
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
-  background: #e0f7fa; /* Light blue background */
-  color: #333;
+  background: #e0f7fa; 
   line-height: 1.6;
   scroll-behavior: smooth;
 }
 
 /* ======================== GLOBAL ELEMENTS ======================== */
 h2 {
-  color: #0277bd; /* Darker blue for headings */
+  color: #0277bd; 
   margin-bottom: 1rem;
 }
 
 a {
   text-decoration: none;
-  color: #01579b; /* Medium blue for links */
+  color: #01579b; 
   transition: color 0.3s ease;
 }
 
 a:hover {
-  color: #0288d1; /* Lighter blue on hover */
+  color: #0288d1; 
 }
 
 button {
-  background-color: #0288d1; /* Blue button */
+  background-color: #0288d1;
   border: none;
   color: white;
   padding: 0.5rem 1rem;
@@ -40,11 +39,11 @@ button {
 }
 
 button:hover {
-  background: #0277bd; /* Darker blue on hover */
+  background: #0277bd;
 }
 
 .navbar {
-  background-color: #01579b; /* Navbar background */
+  background-color: #01579b; 
   padding: 1rem;
   display: flex;
   justify-content: center;
@@ -93,7 +92,7 @@ button:hover {
 
 .card-body h3 {
   margin: 0.5rem 0;
-  color: #0277bd; /* Darker blue for card titles */
+  color: #0277bd;
 }
 
 .rating {
@@ -117,12 +116,12 @@ button:hover {
 }
 
 .details-btn {
-  background-color: #03a9f4; /* Light blue for details button */
+  background-color: #03a9f4; 
   color: white;
 }
 
 .book-btn {
-  background-color: #81d4fa; /* Lighter blue for book button */
+  background-color: #81d4fa; 
   color: #003049;
 }
 
@@ -204,7 +203,184 @@ button:hover {
 .navbar a:hover,
 nav a.active {
   color: #fff;
-  background-color: #0288d1; /* Blue on hover */
+  background-color: #0288d1; 
+}
+
+/* ======================== Tentang  ======================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #e0f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.navbar {
+  background-color: #01579b;
+  padding: 1em 2em;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #b3e5fc;
+}
+
+.about {
+  max-width: 800px;
+  margin: 3em auto;
+  padding: 0 1em;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.5em;
+  color: #0277bd;
+  margin-bottom: 1em;
+}
+
+.about p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+.about-img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 2em 0;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.visi-misi {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+.visi-misi h3 {
+  color: #0277bd;
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+
+.visi-misi p,
+.visi-misi ul {
+  color: #555;
+  margin-bottom: 1em;
+}
+
+.visi-misi ul {
+  padding-left: 1.2em;
+}
+
+.visi-misi ul li {
+  margin-bottom: 0.5em;
+  list-style: disc;
+}
+
+.testimoni {
+  max-width: 700px;
+  margin: 3em auto;
+  padding: 0 1em;
+  text-align: center;
+}
+
+.testimoni h3 {
+  font-size: 1.8em;
+  color: #0277bd;
+  margin-bottom: 1em;
+}
+
+blockquote {
+  font-style: italic;
+  background-color: #ffffff;
+  padding: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin: 0 auto 1em;
+  position: relative;
+}
+
+blockquote footer {
+  margin-top: 1em;
+  font-weight: bold;
+  color: #01579b;
+}
+
+.pesan-btn {
+  background-color: #0288d1;
+  color: white;
+  padding: 0.8em 1.5em;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.pesan-btn:hover {
+  background-color: #0277bd;
+}
+
+.cta {
+  text-align: center;
+  margin: 3em 0;
+}
+
+.footer {
+  background: #01579b;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  margin-top: 4em;
+}
+
+/* ======================== Kontak ======================== */
+.kontak {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2em 1em;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.kontak h2 {
+  text-align: center;
+  margin-bottom: 1em;
+  color: #0277bd;
+}
+
+.kontak-form label {
+  display: block;
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+.kontak-form input,
+.kontak-form textarea {
+  width: 100%;
+  padding: 0.8em;
+  margin-top: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.kontak-form button {
+  margin-top: 1.5em;
+  width: 100%;
 }
 
 /* ======================== HERO SECTION ======================== */
@@ -213,7 +389,7 @@ nav a.active {
   justify-content: space-between;
   align-items: center;
   padding: 4em 2em;
-  background: #b3e5fc; /* Light blue background */
+  background: #b3e5fc;
   flex-wrap: wrap;
 }
 
@@ -229,7 +405,7 @@ nav a.active {
 }
 
 .hero-text .highlight {
-  color: #0288d1; /* Highlight color */
+  color: #0288d1; 
 }
 
 .hero-text p {
@@ -240,7 +416,7 @@ nav a.active {
 }
 
 .explore-btn {
-  background: #0288d1; /* Blue button */
+  background: #0288d1;
   color: white;
   padding: 0.7em 1.5em;
   border-radius: 8px;
@@ -249,7 +425,7 @@ nav a.active {
 }
 
 .explore-btn:hover {
-  background: #0277bd; /* Darker blue on hover */
+  background: #0277bd; 
 }
 
 .hero-img {
@@ -322,7 +498,7 @@ nav a.active {
 }
 
 .card p {
-  color: #0288d1; /* Keep this for price */
+  color: #0288d1; 
   font-weight: bold;
   margin-bottom: 0.5em;
 }
@@ -331,7 +507,7 @@ nav a.active {
 .book-btn,
 .pesan-btn,
 .btn-pesan {
-  background-color: #0288d1; /* Blue for buttons */
+  background-color: #0288d1; 
   color: white;
   padding: 0.7em 1.5em;
   border-radius: 8px;
@@ -404,13 +580,13 @@ section h2 {
 .paket strong {
   display: block;
   font-size: 1.4em;
-  color: #0288d1; /* Blue for strong text */
+  color: #0288d1; 
   margin-bottom: 1.2em;
 }
 
 .pesan-btn {
   display: inline-block;
-  background-color: #0288d1; /* Blue for pesan button */
+  background-color: #0288d1; 
   color: #fff;
   padding: 0.7em 1.5em;
   border-radius: 8px;
@@ -421,8 +597,10 @@ section h2 {
 }
 
 .pesan-btn:hover {
-  background-color: #0277bd; /* Darker blue on hover */
+  background-color: #0277bd;
 }
+
+
 
 /* ======================== CONTACT FORM ======================== */
 .contact {
@@ -443,7 +621,7 @@ section h2 {
 }
 
 .contact .highlight {
-  color: #0288d1; /* Highlight color */
+  color: #0288d1; 
 }
 
 .contact p {
@@ -484,8 +662,7 @@ form textarea {
 }
 
 form button {
-  background: #0288d1; /* Blue button */
-  color: white;
+  background: #0288d1;
   border: none;
   padding: 0.8em;
   font-size: 1em;
@@ -495,7 +672,7 @@ form button {
 }
 
 form button:hover {
-  background: #0277bd; /* Darker blue on hover */
+  background: #0277bd; 
 }
 
 /* ======================== RESPONSIVE ======================== */
@@ -578,5 +755,24 @@ form button:hover {
 
   nav h1 {
     font-size: 1.5em;
+  }
+}
+@media (max-width: 600px) {
+  .about h2 {
+    font-size: 2em;
+  }
+
+  .visi-misi h3,
+  .testimoni h3 {
+    font-size: 1.5em;
+  }
+
+  blockquote {
+    font-size: 0.95em;
+  }
+
+  .pesan-btn {
+    padding: 0.6em 1.2em;
+    font-size: 0.9em;
   }
 }
