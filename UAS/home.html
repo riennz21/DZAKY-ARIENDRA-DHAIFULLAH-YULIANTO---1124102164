@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discover Bali</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <a href="index.html">Beranda</a>
+    <a href="about.html">Tentang</a>
+    <a href="home.html">Home</a>
+  </header>
+
+  <!-- Galeri Destinasi -->
+  <section class="destinations">
+    <h2>Welcome to Bali</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="Nusapenida.jpg" alt="Nusa Penida">
+        <div class="card-body">
+          <h3>Nusa Penida</h3>
+          <p class="rating">⭐⭐⭐⭐☆</p>
+          <p class="price">Rp 750.000 / orang</p>
+          <a href="#" class="details-btn">Lihat Detail</a>
+          <a href="contact.html" class="book-btn">Pesan Sekarang</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="TanahLOT.jpg" alt="Tanah Lot">
+        <div class="card-body">
+          <h3>Tanah Lot</h3>
+          <p class="rating">⭐⭐⭐⭐⭐</p>
+          <p class="price">Rp 400.000 / orang</p>
+          <a href="#" class="details-btn">Lihat Detail</a>
+          <a href="contact.html" class="book-btn">Pesan Sekarang</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="uluwatu.jpg" alt="Uluwatu">
+        <div class="card-body">
+          <h3>Uluwatu</h3>
+          <p class="rating">⭐⭐⭐⭐☆</p>
+          <p class="price">Rp 500.000 / orang</p>
+          <a href="#" class="details-btn">Lihat Detail</a>
+          <a href="contact.html" class="book-btn">Pesan Sekarang</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="nusa2.jpg" alt="Nusa Dua">
+        <div class="card-body">
+          <h3>Nusa Dua</h3>
+          <p class="rating">⭐⭐⭐⭐⭐</p>
+          <p class="price">Rp 350.000 / orang</p>
+          <a href="#" class="details-btn">Lihat Detail</a>
+          <a href="contact.html" class="book-btn">Pesan Sekarang</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="GWK.jpg" alt="Garuda Wisnu Kencana">
+        <div class="card-body">
+          <h3>GWK</h3>
+          <p class="rating">⭐⭐⭐⭐☆</p>
+          <p class="price">Rp 450.000 / orang</p>
+          <a href="#" class="details-btn">Lihat Detail</a>
+          <a href="contact.html" class="book-btn">Pesan Sekarang</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="diamon beach.jpg" alt="Diamond Beach">
+        <div class="card-body">
+          <h3>Diamond Beach</h3>
+          <p class="rating">⭐⭐⭐⭐☆</p>
+          <p class="price">Rp 600.000 / orang</p>
+          <a href="#" class="details-btn">Lihat Detail</a>
+          <a href="contact.html" class="book-btn">Pesan Sekarang</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Pop-up -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h3 id="modal-title">Destinasi</h3>
+      <p id="modal-description">Deskripsi singkat destinasi akan muncul di sini.</p>
+    </div>
+  </div>
+
+  <!-- Script Modal -->
+ <script>
+  const modal = document.getElementById("modal");
+  const closeModal = document.getElementById("closeModal");
+  const modalTitle = document.getElementById("modal-title");
+  const modalDesc = document.getElementById("modal-description");
+
+  const details = {
+    "Nusa Penida": "Nusa Penida adalah pulau tropis dengan tebing menakjubkan, pantai pasir putih, dan spot snorkeling terbaik di Bali.",
+    "Tanah Lot": "Tanah Lot adalah pura di atas batu karang di tepi laut, terkenal untuk pemandangan matahari terbenam yang spektakuler.",
+    "Uluwatu": "Uluwatu terkenal dengan pura di atas tebing dan pertunjukan tari kecak yang menakjubkan saat matahari terbenam.",
+    "Nusa Dua": "Nusa Dua menawarkan pantai berpasir putih yang tenang dan resort mewah yang cocok untuk liburan keluarga atau bulan madu.",
+    "GWK": "Garuda Wisnu Kencana (GWK) adalah taman budaya dengan patung raksasa Dewa Wisnu dan pemandangan indah dari ketinggian.",
+    "Diamond Beach": "Diamond Beach adalah pantai tersembunyi dengan pasir putih dan tebing curam, cocok untuk pencinta fotografi dan petualangan."
+  };
+
+  // Tambahkan event ke semua tombol Lihat Detail
+  document.querySelectorAll('.details-btn').forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      const title = this.closest('.card-body').querySelector('h3').innerText;
+      modalTitle.innerText = title;
+      modalDesc.innerText = details[title] || "Deskripsi belum tersedia.";
+      modal.style.display = "flex";
+    });
+  });
+
+  // Tutup modal jika diklik silang
+  closeModal.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  // Tutup modal jika klik di luar konten
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+</script>
