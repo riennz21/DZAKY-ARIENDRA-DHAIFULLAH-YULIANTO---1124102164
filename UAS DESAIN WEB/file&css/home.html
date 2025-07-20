@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discover Bali</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <a href="index.html">Beranda</a>
+    <a href="about.html">Tentang</a>
+    <a href="home.html">Home</a>
+  </header>
+
+ 
+  <section class="destinations">
+    <h2>Welcome to Bali</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="Nusapenida.jpg" alt="Nusa Penida">
+        <div class="card-body">
+          <h3>Nusa Penida</h3>
+          <p class="rating">⭐⭐⭐⭐☆</p>
+          <p class="price">Rp 750.000 <span class="discount-tag">-20%</span></p>
+          <a href="#" class="details-btn">Lihat Detail</a>
+          <a href="contact.html" class="book-btn">Pesan Sekarang</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="TanahLOT.jpg" alt="Tanah Lot">
+        <div class="card-body">
+          <h3>Tanah Lot</h3>
+          <p class="rating">⭐⭐⭐⭐⭐</p>
+          <p class="price">Rp 400.000 <span class="discount-tag">-10%</span></p>
+          <a href="#" class="details-btn">Lihat Detail</a>
+          <a href="contact.html" class="book-btn">Pesan Sekarang</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="uluwatu.jpg" alt="Uluwatu">
+        <div class="card-body">
+          <h3>Uluwatu</h3>
+          <p class="rating">⭐⭐⭐⭐☆</p>
+          <p class="price">Rp 500.000 <span class="discount-tag">-15%</span></p>
+          <a href="#" class="details-btn">Lihat Detail</a>
+          <a href="contact.html" class="book-btn">Pesan Sekarang</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="nusa2.jpg" alt="Nusa Dua">
+        <div class="card-body">
+          <h3>Nusa Dua</h3>
+          <p class="rating">⭐⭐⭐⭐⭐</p>
+          <p class="price">Rp 350.000 <span class="discount-tag">-5%</span></p>
+          <a href="#" class="details-btn">Lihat Detail</a>
+          <a href="contact.html" class="book-btn">Pesan Sekarang</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="GWK.jpg" alt="Garuda Wisnu Kencana">
+        <div class="card-body">
+          <h3>GWK</h3>
+          <p class="rating">⭐⭐⭐⭐☆</p>
+          <p class="price">Rp 450.000 <span class="discount-tag">-10%</span></p>
+          <a href="#" class="details-btn">Lihat Detail</a>
+          <a href="contact.html" class="book-btn">Pesan Sekarang</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="diamon beach.jpg" alt="Diamond Beach">
+        <div class="card-body">
+          <h3>Diamond Beach</h3>
+          <p class="rating">⭐⭐⭐⭐☆</p>
+          <p class="price">Rp 600.000 <span class="discount-tag">-25%</span></p>
+          <a href="#" class="details-btn">Lihat Detail</a>
+          <a href="contact.html" class="book-btn">Pesan Sekarang</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Pop-up -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span id="closeModal" class="close">&times;</span>
+      <h3 id="modal-title">Destinasi</h3>
+      <p id="modal-description">Deskripsi akan muncul di sini.</p>
+    </div>
+  </div>
+
+  <!-- Script Modal + Diskon -->
+  <script>
+    const modal = document.getElementById("modal");
+    const closeModal = document.getElementById("closeModal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDesc = document.getElementById("modal-description");
+
+    const details = {
+      "Nusa Penida": {
+        desc: "Nusa Penida adalah pulau tropis dengan tebing menakjubkan, pantai pasir putih, dan spot snorkeling terbaik di Bali.",
+        price: 750000,
+        discount: 20
+      },
+      "Tanah Lot": {
+        desc: "Tanah Lot adalah pura di atas batu karang di tepi laut, terkenal untuk pemandangan matahari terbenam yang spektakuler.",
+        price: 400000,
+        discount: 10
+      },
+      "Uluwatu": {
+        desc: "Uluwatu terkenal dengan pura di atas tebing dan pertunjukan tari kecak yang menakjubkan saat matahari terbenam.",
+        price: 500000,
+        discount: 15
+      },
+      "Nusa Dua": {
+        desc: "Nusa Dua menawarkan pantai berpasir putih yang tenang dan resort mewah.",
+        price: 350000,
+        discount: 5
+      },
+      "GWK": {
+        desc: "Garuda Wisnu Kencana adalah taman budaya dengan patung raksasa dan pemandangan menakjubkan.",
+        price: 450000,
+        discount: 10
+      },
+      "Diamond Beach": {
+        desc: "Diamond Beach adalah pantai tersembunyi dengan pasir putih dan tebing curam, cocok untuk petualangan.",
+        price: 600000,
+        discount: 25
+      }
+    };
+
+    document.querySelectorAll('.details-btn').forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault();
+        const title = this.closest('.card-body').querySelector('h3').innerText;
+        const item = details[title];
+
+        if (item) {
+          const diskon = item.discount;
+          const hargaAwal = item.price;
+          const hargaDiskon = hargaAwal - (hargaAwal * diskon / 100);
+
+          modalTitle.innerText = title;
+          modalDesc.innerHTML = `
+            <p>${item.desc}</p>
+            <p><strong>Harga Asli:</strong> Rp ${hargaAwal.toLocaleString('id-ID')}</p>
+            <p><strong>Diskon:</strong> ${diskon}%</p>
+            <p><strong>Harga Setelah Diskon:</strong> <span style="color:green;">Rp ${hargaDiskon.toLocaleString('id-ID')}</span></p>
+          `;
+          modal.style.display = "flex";
+        }
+      });
+    });
+
+    closeModal.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,778 @@
+/* ======================== RESET & BASE ======================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background: #e0f7fa; 
+  line-height: 1.6;
+  scroll-behavior: smooth;
+}
+
+/* ======================== GLOBAL ELEMENTS ======================== */
+h2 {
+  color: #0277bd; 
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #01579b; 
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #0288d1; 
+}
+
+button {
+  background-color: #0288d1;
+  border: none;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0277bd;
+}
+
+.navbar {
+  background-color: #01579b; 
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.destinations {
+  padding: 2rem;
+  text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-body h3 {
+  margin: 0.5rem 0;
+  color: #0277bd;
+}
+
+.rating {
+  font-size: 1.2rem;
+  color: gold;
+  margin-bottom: 0.5rem;
+}
+
+.price {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.details-btn, .book-btn {
+  display: inline-block;
+  margin: 5px;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.details-btn {
+  background-color: #03a9f4; 
+  color: white;
+}
+
+.book-btn {
+  background-color: #81d4fa; 
+  color: #003049;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ======================== NAVBAR ======================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 2em;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 1.8em;
+  color: #0f172a;
+  font-weight: bold;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5em;
+}
+
+.navbar ul li a,
+.navbar a {
+  font-weight: bold;
+  padding: 0.5em;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: #1e293b;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active,
+.navbar a:hover,
+nav a.active {
+  color: #fff;
+  background-color: #0288d1; 
+}
+
+/* ======================== Tentang  ======================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #e0f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+.navbar {
+  background-color: #01579b;
+  padding: 1em 2em;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #b3e5fc;
+}
+
+.about {
+  max-width: 800px;
+  margin: 3em auto;
+  padding: 0 1em;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2.5em;
+  color: #0277bd;
+  margin-bottom: 1em;
+}
+
+.about p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+.about-img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin: 2em 0;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.visi-misi {
+  max-width: 800px;
+  margin: 2em auto;
+  padding: 0 1em;
+}
+
+.visi-misi h3 {
+  color: #0277bd;
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+
+.visi-misi p,
+.visi-misi ul {
+  color: #555;
+  margin-bottom: 1em;
+}
+
+.visi-misi ul {
+  padding-left: 1.2em;
+}
+
+.visi-misi ul li {
+  margin-bottom: 0.5em;
+  list-style: disc;
+}
+
+.testimoni {
+  max-width: 700px;
+  margin: 3em auto;
+  padding: 0 1em;
+  text-align: center;
+}
+
+.testimoni h3 {
+  font-size: 1.8em;
+  color: #0277bd;
+  margin-bottom: 1em;
+}
+
+blockquote {
+  font-style: italic;
+  background-color: #ffffff;
+  padding: 1.5em;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin: 0 auto 1em;
+  position: relative;
+}
+
+blockquote footer {
+  margin-top: 1em;
+  font-weight: bold;
+  color: #01579b;
+}
+
+.pesan-btn {
+  background-color: #0288d1;
+  color: white;
+  padding: 0.8em 1.5em;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.pesan-btn:hover {
+  background-color: #0277bd;
+}
+
+.cta {
+  text-align: center;
+  margin: 3em 0;
+}
+
+.footer {
+  background: #01579b;
+  color: white;
+  text-align: center;
+  padding: 1em;
+  margin-top: 4em;
+}
+
+/* ======================== Kontak ======================== */
+.kontak {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2em 1em;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.kontak h2 {
+  text-align: center;
+  margin-bottom: 1em;
+  color: #0277bd;
+}
+
+.kontak-form label {
+  display: block;
+  margin-top: 1em;
+  font-weight: bold;
+}
+
+.kontak-form input,
+.kontak-form textarea {
+  width: 100%;
+  padding: 0.8em;
+  margin-top: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.kontak-form button {
+  margin-top: 1.5em;
+  width: 100%;
+}
+
+/* ======================== HERO SECTION ======================== */
+.hero-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4em 2em;
+  background: #b3e5fc;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.hero-text h1 {
+  font-size: 3.5em;
+  margin-bottom: 0.3em;
+  color: #0f172a;
+}
+
+.hero-text .highlight {
+  color: #0288d1; 
+}
+
+.hero-text p {
+  max-width: 500px;
+  font-size: 1.1em;
+  color: #334155;
+  margin-bottom: 1.2em;
+}
+
+.explore-btn {
+  background: #0288d1;
+  color: white;
+  padding: 0.7em 1.5em;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.explore-btn:hover {
+  background: #0277bd; 
+}
+
+.hero-img {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-img img {
+  width: 400px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
+}
+
+/* ======================== DESTINATIONS SECTION ======================== */
+.destinations {
+  text-align: center;
+  padding: 3em 1em;
+}
+
+.destinations h2 {
+  font-size: 2.5em;
+  margin-bottom: 1em;
+  color: #0f172a;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 280px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card-body {
+  padding: 1em;
+  text-align: left;
+}
+
+.card h3 {
+  color: #0f172a;
+  margin-bottom: 0.5em;
+}
+
+.rating {
+  color: gold;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+}
+
+.card p {
+  color: #0288d1; 
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.details-btn,
+.book-btn,
+.pesan-btn,
+.btn-pesan {
+  background-color: #0288d1; 
+  color: white;
+  padding: 0.7em 1.5em;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.details-btn:hover,
+.book-btn:hover,
+.pesan-btn:hover,
+.btn-pesan:hover {
+  background-color: #0277bd; /* Darker blue on hover */
+}
+
+/* ======================== HARGA PAGE ======================== */
+main {
+  max-width: 960px;
+  margin: 4em auto;
+  padding: 0 1.5em;
+}
+
+section h2 {
+  font-size: 2.4em;
+  color: #0f172a;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.paket {
+  background-color: #fff;
+  padding: 2em;
+  margin-bottom: 2em;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 340px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.paket:hover {
+  transform: translateY(-5px);
+}
+
+.paket img {
+  width: 100%;
+  height: 220px;
+  margin-bottom: 1em;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.paket h3 {
+  font-size: 1.6em;
+  color: #0f172a;
+  margin-bottom: 0.5em;
+}
+
+.paket p {
+  color: #64748b;
+  margin-bottom: 0.8em;
+  font-size: 1em;
+}
+
+.paket strong {
+  display: block;
+  font-size: 1.4em;
+  color: #0288d1; 
+  margin-bottom: 1.2em;
+}
+
+.pesan-btn {
+  display: inline-block;
+  background-color: #0288d1; 
+  color: #fff;
+  padding: 0.7em 1.5em;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.3s ease;
+  font-size: 1em;
+}
+
+.pesan-btn:hover {
+  background-color: #0277bd;
+}
+
+
+
+/* ======================== CONTACT FORM ======================== */
+.contact {
+  padding: 3em 2em;
+  max-width: 600px;
+  margin: auto;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: #0f172a;
+}
+
+.contact .highlight {
+  color: #0288d1; 
+}
+
+.contact p {
+  text-align: center;
+  margin-bottom: 2em;
+  color: #555;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+}
+
+.input-icon input {
+  padding-left: 2.5em;
+}
+
+form input,
+form textarea {
+  padding: 0.8em;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 100%;
+}
+
+form button {
+  background: #0288d1;
+  border: none;
+  padding: 0.8em;
+  font-size: 1em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background: #0277bd; 
+}
+
+/* ======================== RESPONSIVE ======================== */
+@media (max-width: 768px) {
+  .navbar,
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .hero-section {
+    flex-direction: column;
+    text-align: center;
+    padding: 2em 1em;
+  }
+
+  .hero-img img {
+    width: 80%;
+    margin-top: 1em;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1em;
+  }
+
+  .contact {
+    padding: 2.5em 1.5em;
+  }
+
+  section h2 {
+    font-size: 1.8em;
+  }
+
+  .paket h3 {
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2.5em;
+  }
+
+  .hero-text p {
+    font-size: 1em;
+  }
+
+  .explore-btn {
+    padding: 0.5em 1em;
+    font-size: 0.9em;
+  }
+
+  .card h3,
+  .rating {
+    font-size: 1em;
+  }
+
+  .card-body {
+    text-align: center;
+  }
+
+  .destinations h2 {
+    font-size: 2em;
+  }
+
+  .contact {
+    padding: 2em 1.2em;
+  }
+
+  nav h1 {
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 600px) {
+  .about h2 {
+    font-size: 2em;
+  }
+
+  .visi-misi h3,
+  .testimoni h3 {
+    font-size: 1.5em;
+  }
+
+  blockquote {
+    font-size: 0.95em;
+  }
+
+  .pesan-btn {
+    padding: 0.6em 1.2em;
+    font-size: 0.9em;
+  }
+}
